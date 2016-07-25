@@ -1,0 +1,50 @@
+<h2>Add a Robot</h2>
+<form ng-submit="create(newRobot)">
+  <label>Name: <input type="text" name="name" ng-model="newRobot.name"></label>
+  <label>Power Source: <input type="text" name="power_source" ng-model="newRobot.power_source"></label>
+  <input type="submit" value="Add a Robot">
+</form>
+
+<h3>Listing All Robots</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Power Source</th>
+      <th>Reviews</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="robot in robots">
+      <td ng-bind="robot.name"></td>
+      <td ng-bind="robot.power_source">Garbage</td>
+      <td ng-bind="robot.reviews.length"></td>
+      <td>
+        <a ng-href="#/show/{{robot._id}}"><button>Show</button></a>
+        <a ng-href="#/edit/{{robot._id}}"><button>Edit</button></a>
+        <button ng-click=delete(robot)>Delete</button>
+      </td>
+    </tr>
+<!--     <tr>
+      <td>t-1000</td>
+      <td>John Conner</td>
+      <td>100</td>
+      <td>
+        <button>Show</button>
+        <button>Edit</button>
+        <button>Delete</button>
+      </td>
+    </tr>
+    <tr>
+      <td>Data</td>
+      <td>Human Emotions</td>
+      <td>50</td>
+      <td>
+        <button>Show</button>
+        <button>Edit</button>
+        <button>Delete</button>
+      </td>
+    </tr> -->
+  </tbody>
+</table>

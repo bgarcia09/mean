@@ -1,0 +1,15 @@
+<h1 ng-bind="robot.name"></h1>
+<strong>Power Source: </strong><span ng-bind="robot.power_source"></span>
+
+<h3>Reviews</h3>
+
+<form ng-submit="review(newReview)">
+  <label>Name: <input type="text" name="name" ng-model="newReview.name"></label>
+  <label>Review: <input type="text" name="review" ng-model="newReview.review"></label>
+  <input type="submit" value="Submit your review">
+</form>
+
+<div ng-repeat="review in robot.reviews">
+  <p><strong>Name: </strong><span ng-bind="review.name"></span></p>
+  <p><strong>Review: </strong><span ng-bind="review.review"></span></p>
+</div>
